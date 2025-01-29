@@ -17,7 +17,7 @@ body {
 }
 
 .container {
-    max-width: 1280px;
+    max-width: 1380px;
     margin: 0 auto;
     padding: 0 1.7%;
 }
@@ -65,10 +65,12 @@ html::-webkit-scrollbar-thumb{
     border-radius: 5px;
 }
 
+/*
 html::-webkit-scrollbar-button{
     background-color: white;
     height: 8px;
 }
+*/
 
 html::-webkit-scrollbar-thumb:hover{
     background-color: #555;
@@ -170,6 +172,139 @@ main {
 
 /*****************************/
 /* Apresentation */
+section.apresentation {
+    margin-bottom: 50px;
+}
+
+section.apresentation .container{
+    position: relative;
+    max-width: none;
+}
+
+section.apresentation .container h2{
+    position: absolute;
+    z-index: 5;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    padding: 10px;
+    font-size: 40px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+/* Carousel Wrapper */
+section.apresentation .carousel-wrapper{
+    position: relative;
+    margin: 0 auto;
+}
+
+section.apresentation .carousel-wrapper .carousel{
+    display: flex;
+    overflow: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+}
+
+/* Fill Bar */
+.carousel-wrapper-fill-bar{
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    padding: 10px;
+    height: 70px;
+    background: rgba(75, 75, 75, 0.4);
+}
+
+.carousel-fill-bar{
+    position: absolute;
+    z-index: 4;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 0%;
+    height: 70px;
+    background: rgba(75, 75, 75, 0.7);
+}
+
+/* Last/Next */
+.carousel-interact-last-btn, .carousel-interact-next-btn{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 40px;
+    z-index: 2;
+    color: white;
+}
+
+.carousel-interact-last-btn{
+    left: 25px;
+    z-index: 6;
+}
+
+.carousel-interact-next-btn{
+    right: 25px;
+    z-index: 6;
+}
+
+/* Play/Pause */
+.carousel-interact-play_pause-btn{
+    z-index: 5;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    padding: 10px 30px;
+    background: rgba(75, 75, 75, 0.4);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.carousel-interact-play_pause-btn i{
+    color: white;
+    font-size: 40px;
+}
+
+/* Carousel > Content Columns */
+section.apresentation .carousel-wrapper .carousel > div{
+    flex: 1 0 100%;
+    scroll-snap-align: start;
+    object-fit: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+section.apresentation .gall-car-wrp-column{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+}
+
+section.apresentation .carousel-wrapper a{
+    width: 100%;
+    margin: 5px;
+}
+
+section.apresentation .carousel-wrapper img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+/*
 #apresentation-chevron {
     position: absolute;
     top: 100%;
@@ -192,6 +327,47 @@ main {
     }
 
 }
+*/
+
+/*****************************/
+/* About Me */
+section.about-me .container{
+    display: flex;
+    padding: 15px;
+}
+
+/* Text */
+section.about-me .container div.about-me-text{
+    width: 65%;
+    padding: 20px;
+}
+
+.about-me-text h2{
+    font-size: 40px;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid black;
+    display: inline-block;
+}
+
+.about-me-text p{
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 1px;
+}
+
+/* Image */
+section.about-me .container div.about-me-image{
+    width: 35%;
+    text-align: center;
+}
+
+.about-me-image img{
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    object-fit: cover;
+}
 
 /*****************************/
 /* Budget */
@@ -207,7 +383,32 @@ section.budget a{
     border-radius: 8px;
     border: 1px solid #313131;
     padding: 12px 22px;
-    font-size: 25px;
+    font-size: 35px;
+    transition: all 0.25s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+section.budget a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #313131;
+    z-index: -1;
+    transition: height 0.25s ease-in-out;
+    height: 0;
+    border-radius: 6px;
+}
+
+section.budget a:hover::before {
+    height: 100%;
+}
+
+section.budget a:hover{
+    color: white;
+    font-weight: 200;
 }
 
 /*****************************/
@@ -294,6 +495,7 @@ footer p.site-developer {
 footer p.site-developer a {
     transition: all 0.25s ease-in-out !important;
     font-weight: 600;
+    text-decoration: underline;
 }
 
 footer p.site-developer a:hover {
