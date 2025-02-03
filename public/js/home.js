@@ -38,50 +38,13 @@ $(() => {
     var timeToNext = 7000; // seconds
     let debuggerCarrousel = false;
 
-    // $(Carousel.find('> div')[1]).position().left
-
-    // console.log(Carousel.find('> div'));
-
-    Carousel.find('> div').each((i, div)=>{
-
-        console.warn(i);    
-        console.log($(div).position().left);
-
-    });
-
-    // Setup Carousel
-    (function setupCarousel(){
-
-        Carousel.find('> div img').each((_, img)=>{
-
-            $(img).attr('image-loader-src', $(img).attr('src'));
-            $(img).attr('src', '');
-
-        });
-
-        return initCarousel();
-
-    })();
-
     // Init
+    initCarousel();
+
     function initCarousel() {
 
         // console.warn(currentIndex);
         // console.log($(Carousel.find('> div').eq(currentIndex)));
-
-        // Reset and Load Current Images
-        Carousel.find('> div img').each((_, img)=>{
-            $(img).attr('src', '');
-
-        });
-        
-
-        $(Carousel.find('> div')[currentIndex]).find('img').each((_, img)=>{
-            $(img).attr('src', $(img).attr('image-loader-src'));
-
-            return;
-
-        });
 
         // Check if is paused
         if (isPaused) {
