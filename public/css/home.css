@@ -364,7 +364,7 @@ section.about-me .container div.about-me-image{
 
 .about-me-image img{
     width: 350px;
-    height: 350px;
+    height: auto;
     border-radius: 50%;
     object-fit: cover;
 }
@@ -473,6 +473,7 @@ footer .com-quest .com-quest-content{
 footer .com-quest[opened] .com-quest-content{
     max-height: 100px;
     padding: 10px 13px;
+    cursor: pointer;
 }
 
 /* Footer Social Media */
@@ -500,4 +501,222 @@ footer p.site-developer a {
 
 footer p.site-developer a:hover {
     opacity: 0.6;
+}
+
+/************************************/
+/* Responsive */
+@media screen and (max-width: 768px){
+
+    /* Header */
+    header{
+        padding: 0 5px;
+        z-index: 1;
+    }
+
+    header .container {
+        flex-direction: column;
+        background-color: white;
+        padding-bottom: 15px;
+    }
+
+    header .logo, header nav{
+        width: 100%;
+    }
+
+    header .logo img{
+        height: 200px;
+        width: 100%;
+        object-fit: cover;    
+    }
+
+    header nav ul{
+        flex-direction: column;
+        text-align: center;
+        font-size: 25px;
+        gap: 0.5rem;
+    }
+
+    /* Main */
+    main {
+        margin-bottom: 325px;
+    }
+
+    /* Gallery Carousel */
+    section.apresentation .container h2{
+        font-size: 20px;
+        padding: 0 60px;
+    }
+
+    .pswp-gallery div:last-child{
+        display: none;
+    }
+
+    section.apresentation .gall-car-wrp-column{
+        width: 45%;
+        height: 250px;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+
+    section.apresentation .gall-car-wrp-column a:last-child{
+        display: none;
+    }
+
+    section.apresentation .gall-car-wrp-column a{
+        width: 100% !important;
+        margin: 0;
+        margin-bottom: 7px;
+    }
+
+    .carousel-interact-last-btn, .carousel-interact-next-btn{
+        font-size: 25px;
+    }
+
+    .carousel-wrapper-fill-bar, .carousel-fill-bar{
+        padding: 0;
+        height: 55px;
+    }
+
+    .carousel-interact-play_pause-btn{
+        padding: 8px 16px;
+        top: 75%;
+    }
+
+    .carousel-interact-play_pause-btn i{
+        font-size: 28px;
+    }
+
+    /* About Me */
+    section.about-me .container{
+        flex-direction: column-reverse;
+        padding: 3px;
+    }
+
+    section.about-me .container div.about-me-text,
+    section.about-me .container div.about-me-image{
+        width: 100%;
+        text-align: center;
+    }
+
+    section.about-me .container div.about-me-text{
+        padding: 10px;
+    }
+
+    .about-me-text h2{
+        font-size: 30px;
+    }
+
+    .about-me-text p{
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .about-me-image img{
+        width: 60%;
+        height: auto;
+    }
+
+    /* Budget */
+    section.budget{
+        padding: 100px 25px;
+    }
+
+    section.budget a{
+        display: block;
+    }
+
+    /* Footer */
+    footer .container{
+        flex-direction: column;
+    }
+
+    /* Footer > Common Questions */
+    footer .container > div{
+        width: 100%;
+    }
+
+    footer .com-quest{
+        text-align: center;
+    }
+
+    footer .com-quest p{
+        font-size: 15px;
+    }
+
+    /* Footer > Social Media */
+    footer .social-media{
+        margin-top: 7px;
+    }
+
+    footer .social-media a{
+        font-size: 30px;
+    }
+
+    footer .social-media a:hover{
+        font-size: 35px;;
+    }
+
+    /* Footer > Copyright & Site Developer */
+    footer > p{
+        font-size: 15px;
+    }
+
+}
+
+@media screen and (max-width: 468px){
+
+    /* Header */
+    header .logo img{
+        height: 150px;   
+    }
+
+    /* Main */
+    main {
+        margin-bottom: 375px;
+    }
+
+    /* About Me */
+    .about-me-image img{
+        width: 90%;
+    }
+
+    /* Budget */
+    section.budget{
+        padding: 70px 25px;
+    }
+
+    section.budget a{
+        font-size: 25px;
+    }
+
+    /* Footer > Common questions */
+    footer .com-quest,
+    footer .com-quest[opened] .com-quest-content{
+        padding: 5px 10px;
+    }
+
+}
+
+@media screen and (max-width: 375px){
+
+    /* Header */
+    header .logo img{
+        height: 175px;   
+    }
+
+    /* Main */
+    main {
+        margin-bottom: 350px;
+    }
+
+    /* Carousel */
+    section.apresentation .container h2{
+        font-size: 16px;
+    }
+
+    /* Budget */
+    section.budget a{
+        font-size: 20px;
+    }
+
 }
