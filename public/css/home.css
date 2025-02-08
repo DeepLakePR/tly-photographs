@@ -1,176 +1,4 @@
 /*****************************/
-/* Setup */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Work Sans", serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-    appearance: none;
-}
-
-html,
-body {
-    width: 100%;
-}
-
-.container {
-    max-width: 1380px;
-    margin: 0 auto;
-    padding: 0 1.7%;
-}
-
-h1,
-h2,
-h3 {
-    font-family: 'Lora';
-}
-
-p {
-    letter-spacing: 0.7px;
-}
-
-ul {
-    list-style: none;
-}
-
-a {
-    text-decoration: none;
-    color: black;
-}
-
-img {
-    max-width: 100%;
-}
-
-input:focus {
-    outline: none;
-}
-
-/*****************************/
-/* ScrollBar */
-html::-webkit-scrollbar{
-    width: 9px;
-}
-
-html::-webkit-scrollbar-track{
-    background: #f1f1f1;
-}
-
-html::-webkit-scrollbar-thumb{
-    background-color: #888;
-    border: 2px solid #f1f1f1;
-    border-radius: 5px;
-}
-
-/*
-html::-webkit-scrollbar-button{
-    background-color: white;
-    height: 8px;
-}
-*/
-
-html::-webkit-scrollbar-thumb:hover{
-    background-color: #555;
-}
-
-/*****************************/
-/* Header */
-header {
-    position: sticky;
-    padding: 0 10px;
-}
-
-header .container {
-    padding: 0;
-    max-width: none;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-header .logo {
-    width: 25%;
-}
-
-header nav {
-    width: 75%;
-    padding: 0 25px;
-}
-
-header nav ul {
-    display: flex;
-    justify-content: flex-end;
-    gap: 2rem;
-    font-size: 35px;
-}
-
-header nav li a {
-    padding: 8px 15px 0 15px;
-    color: black;
-    letter-spacing: 1.5px;
-    font-family: 'Lora';
-    transition: all 0.25s ease-in-out;
-    position: relative;
-}
-
-header nav li a,
-header nav li a:after,
-header nav li a:before {
-    transition: all .5s;
-    border-radius: 5px;
-}
-
-header nav li a:after {
-    content: '';
-    position: absolute;
-    bottom: -3px;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: #888;
-    margin: 0 auto;
-}
-
-/* Header Navigation Animations */
-header nav li a:after {
-    width: 0px;
-}
-
-header nav li a:hover {
-    color: #888;
-}
-
-header nav li a:hover:after {
-    animation: navfill 0.65s forwards;
-    -webkit-animation: navfill 0.65s forwards;
-    -moz-animation: navfill 0.65s forwards;
-}
-
-@keyframes navfill {
-
-    0% {
-        width: 0%;
-    }
-
-    100% {
-        width: 100%;
-    }
-
-}
-
-/*****************************/
-/* Main */
-main {
-    z-index: 1;
-    position: relative;
-    background: white;
-    margin-bottom: 300px;
-}
-
-/*****************************/
 /* Apresentation */
 section.apresentation {
     margin-bottom: 50px;
@@ -304,31 +132,6 @@ section.apresentation .carousel-wrapper img{
     border-radius: 5px;
 }
 
-/*
-#apresentation-chevron {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translate(-50%, -100%);
-    font-size: 50px;
-    cursor: pointer;
-    animation: chevron 2s infinite;
-}
-
-@keyframes chevron {
-
-    0%,
-    100% {
-        transform: translate(-50%, -100%);
-    }
-
-    50% {
-        transform: translate(-50%, -170%);
-    }
-
-}
-*/
-
 /*****************************/
 /* About Me */
 section.about-me .container{
@@ -411,130 +214,9 @@ section.budget a:hover{
     font-weight: 200;
 }
 
-/*****************************/
-/* Footer */
-footer {
-    background: linear-gradient(to bottom, white, #bdbdbd);
-    text-align: center;
-    position: fixed;
-    bottom: 0px;
-    z-index: 0;
-    width: 100%;
-    padding: 15px;
-}
-
-footer .container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 15px 0;
-}
-
-footer .container > div{
-    width: 50%;
-    height: 100%;
-}
-
-/* Footer Common Questions */
-footer .common-questions{
-    text-align: left;
-}
-
-footer .com-quest{
-    font-weight: 300;
-    margin: 7px 0;
-    padding: 8px 15px;
-    background: #e9e9e9;
-    border-radius: 5px;
-    box-shadow: 0px 2px 9px 1px rgba(0,0,0,0.1);
-}
-
-footer .com-quest p {
-    cursor: pointer;
-    font-weight: 500;
-    padding: 2px 5px;
-}
-
-footer .com-quest p i{
-    transition: transform 0.4s ease-in-out;
-}
-
-footer .com-quest[opened] p i{
-    transform: rotate(180deg);
-}
-
-footer .com-quest .com-quest-content{
-    overflow: hidden;
-    max-height: 0;
-    transition: max-height 0.4s ease, padding 0.4s ease;
-    padding: 0;
-}
-
-footer .com-quest[opened] .com-quest-content{
-    max-height: 100px;
-    padding: 10px 13px;
-    cursor: pointer;
-}
-
-/* Footer Social Media */
-footer .social-media a{
-    font-size: 35px;
-    transition: all 0.25s ease-in-out;
-}
-
-footer .social-media a:hover{
-    color: #797979;
-    font-size: 45px;;
-}
-
-/* Footer Copyright & Site Developer */
-footer p.site-developer {
-    margin-top: 5px;
-    opacity: 0.5;
-}
-
-footer p.site-developer a {
-    transition: all 0.25s ease-in-out !important;
-    font-weight: 600;
-    text-decoration: underline;
-}
-
-footer p.site-developer a:hover {
-    opacity: 0.6;
-}
-
 /************************************/
 /* Responsive */
 @media screen and (max-width: 768px){
-
-    /* Header */
-    header{
-        padding: 0 5px;
-        z-index: 1;
-    }
-
-    header .container {
-        flex-direction: column;
-        background-color: white;
-        padding-bottom: 15px;
-    }
-
-    header .logo, header nav{
-        width: 100%;
-    }
-
-    header .logo img{
-        height: 200px;
-        width: 100%;
-        object-fit: cover;    
-    }
-
-    header nav ul{
-        flex-direction: column;
-        text-align: center;
-        font-size: 25px;
-        gap: 0.5rem;
-    }
 
     /* Main */
     main {
@@ -625,50 +307,9 @@ footer p.site-developer a:hover {
         display: block;
     }
 
-    /* Footer */
-    footer .container{
-        flex-direction: column;
-    }
-
-    /* Footer > Common Questions */
-    footer .container > div{
-        width: 100%;
-    }
-
-    footer .com-quest{
-        text-align: center;
-    }
-
-    footer .com-quest p{
-        font-size: 15px;
-    }
-
-    /* Footer > Social Media */
-    footer .social-media{
-        margin-top: 7px;
-    }
-
-    footer .social-media a{
-        font-size: 30px;
-    }
-
-    footer .social-media a:hover{
-        font-size: 35px;;
-    }
-
-    /* Footer > Copyright & Site Developer */
-    footer > p{
-        font-size: 15px;
-    }
-
 }
 
 @media screen and (max-width: 468px){
-
-    /* Header */
-    header .logo img{
-        height: 150px;   
-    }
 
     /* Main */
     main {
@@ -689,20 +330,9 @@ footer p.site-developer a:hover {
         font-size: 25px;
     }
 
-    /* Footer > Common questions */
-    footer .com-quest,
-    footer .com-quest[opened] .com-quest-content{
-        padding: 5px 10px;
-    }
-
 }
 
 @media screen and (max-width: 375px){
-
-    /* Header */
-    header .logo img{
-        height: 175px;   
-    }
 
     /* Main */
     main {

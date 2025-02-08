@@ -1,0 +1,104 @@
+/*****************************/
+/* Gallery */
+section.gallery{
+    padding-bottom: 50px;
+}
+
+section.gallery .container{
+    text-align: center;
+}
+
+section.gallery .container > h1{
+    margin: 0 auto;
+    display: inline-block;
+    padding: 0 5%;
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid black;
+}
+
+section.gallery .gallery-wrapper{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px; 
+
+}
+
+section.gallery .pswp-gallery{
+    position: relative;
+    height: 250px;
+}
+
+section.gallery .pswp-gallery a{
+    width: 100%;
+    height: 100%;
+}
+
+section.gallery .pswp-gallery a p{
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 16px;
+    color: white;
+    font-size: 20px;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+section.gallery .pswp-gallery a:hover p{
+    opacity: 1;
+}
+
+section.gallery .pswp-gallery a img{
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    object-fit: cover;
+}
+
+section.gallery .pswp-gallery a:nth-child(n+2){
+    display: none;
+}
+
+/*****************************/
+/* Responsive */
+@media screen and (max-width: 1024px){
+
+    section.gallery .gallery-wrapper{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+}
+
+@media screen and (max-width: 768px){
+
+    section.gallery .gallery-wrapper{
+        grid-template-columns: repeat(1, 1fr);
+        padding: 0 5%;
+        gap: 60px;
+    }
+
+    section.gallery .pswp-gallery a p{
+        opacity: 1;
+        position: static;
+        width: 100%;
+        height: auto;
+        background: none;
+        border-radius: 0;
+        color: black;
+        font-size: 20px;
+        transition: none;
+        transform: none;
+    }
+
+}
