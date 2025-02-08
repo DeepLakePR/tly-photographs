@@ -82,6 +82,12 @@ section.gallery .pswp-gallery a:nth-child(n+2){
 
 @media screen and (max-width: 768px){
 
+    /* Main */
+    main{
+        margin-bottom: 375px;
+    }
+
+    /* Section Gallery */
     section.gallery .gallery-wrapper{
         grid-template-columns: repeat(1, 1fr);
         padding: 0 5%;
