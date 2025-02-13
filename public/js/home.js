@@ -9,6 +9,24 @@ $(() => {
     }
 
     ///////////////////////////
+    // Header Navigation
+    const Header = $('header');
+    const Header_Nav_Li = Header.find('nav ul li');
+
+    Header_Nav_Li.each((_, navButton)=>{
+
+        $(navButton).click(()=>{
+
+            let target = $(navButton).attr('scroll-target');
+
+            if(target)
+                scroll({'top': $(target).position().top, 'behavior': 'smooth'});
+
+        });
+
+    })
+
+    ///////////////////////////
     // Apresentation Carousel
     const SectionApresentation = $('section.apresentation');
 
@@ -22,7 +40,6 @@ $(() => {
 
     const Carousel_Play_Pause_Btn = SectionApresentation.find('.carousel-interact-play_pause-btn');
 
-    let fullCarouselWidth = $(Carousel)[0].scrollWidth;
     let maxCarouselLength = Carousel_Content_List.length;
 
     var currentIndex = 0;

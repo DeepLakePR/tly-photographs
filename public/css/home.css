@@ -240,14 +240,17 @@ section.budget a:hover{
         overflow: hidden;
     }
 
-    section.apresentation .gall-car-wrp-column a:last-child{
-        display: none;
-    }
-
     section.apresentation .gall-car-wrp-column a{
         width: 100% !important;
         margin: 0;
+    }
+    
+    section.apresentation .gall-car-wrp-column a:first-child{
         margin-bottom: 7px;
+    }
+
+    section.apresentation .gall-car-wrp-column a:last-child{
+        display: none;
     }
 
     .carousel-interact-last-btn, .carousel-interact-next-btn{
